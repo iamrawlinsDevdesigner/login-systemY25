@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+    header("Location: dashboard.php"); // or wherever your dashboard is
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
